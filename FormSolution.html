@@ -10,7 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <style type="text/css">
     .data{
-        display: none;
+        display: none;    // to block the display of data till user doesnt signin
     }
     #para{
         font-size: 25px;
@@ -25,7 +25,7 @@
 <body>
 
   <h1>Register</h1>
-
+  // input from user
   <form>
     <div>
       <label for="first-name">First Name:</label>
@@ -231,11 +231,12 @@
     </div>
 
     <div>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" /> 
     </div>
   </form>
   <p id="sp">OR sign in via</p>  
-  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> // for google signin button
+  // to give basic details
   <div class="data">
       <p id="para">Profile details</p>
       <img id="pp" class="img-circle" width="100" height="100" >
@@ -247,6 +248,7 @@
   </div>
 
   <script>
+    // function after signin
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -258,7 +260,8 @@
         $("#pp").attr('src',profile.getImageUrl());
         $("#name").text(profile.getName());
       }
-    </script> 
+    </script>
+  // to signout but if you are on the localhost you have to log out from gmail
     <script type="text/javascript">
         function signOut()
         {
